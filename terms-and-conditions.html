@@ -5,112 +5,218 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms and Conditions - trainer.</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #A6A39A; /* Muted text */
+            background-color: #1A1A1C; /* Dark background */
+            min-height: 100vh;
+        }
+        
+        .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #f8f9fa;
+            padding: 40px 20px;
         }
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        
+        .content-card {
+            background: #212124; /* Surface color */
+            border: 1px solid #3A3A3D; /* Border color */
+            border-radius: 16px;
+            padding: 48px;
+            margin-bottom: 20px;
         }
+        
         h1 {
-            color: #2d5a2d;
-            border-bottom: 3px solid #4a9a4a;
-            padding-bottom: 10px;
+            color: #F4F1EA; /* Foreground */
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
         }
+        
+        h1::after {
+            content: '.';
+            color: #598262; /* AccentForest */
+        }
+        
+        .subtitle {
+            color: #A6A39A; /* Muted */
+            font-size: 14px;
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #3A3A3D;
+        }
+        
         h2 {
-            color: #2d5a2d;
-            margin-top: 35px;
-            margin-bottom: 15px;
-        }
-        h3 {
-            color: #4a9a4a;
-            margin-top: 25px;
-            margin-bottom: 10px;
-        }
-        .warning {
-            background-color: #fff3cd;
-            border: 1px solid #ffeaa7;
-            border-left: 4px solid #f39c12;
-            padding: 20px;
-            margin: 25px 0;
-            border-radius: 5px;
-        }
-        .warning strong {
-            color: #d68910;
-        }
-        .important {
-            background-color: #f8d7da;
-            border: 1px solid #f1aeb5;
-            border-left: 4px solid #dc3545;
-            padding: 20px;
-            margin: 25px 0;
-            border-radius: 5px;
-        }
-        .important strong {
-            color: #721c24;
-        }
-        .highlight {
-            background-color: #e8f5e8;
-            padding: 15px;
-            border-left: 4px solid #4a9a4a;
-            margin: 20px 0;
-        }
-        .contact {
-            background-color: #f0f8f0;
-            padding: 20px;
-            border-radius: 5px;
-            margin-top: 30px;
-        }
-        .footer {
-            text-align: center;
-            color: #666;
-            font-style: italic;
+            color: #598262; /* AccentForest */
+            font-size: 24px;
+            font-weight: 500;
             margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
+            margin-bottom: 16px;
+            letter-spacing: -0.3px;
         }
-        ul {
-            margin: 10px 0;
-            padding-left: 25px;
+        
+        h3 {
+            color: #F4F1EA; /* Foreground */
+            font-size: 18px;
+            font-weight: 500;
+            margin-top: 28px;
+            margin-bottom: 12px;
         }
-        li {
-            margin: 8px 0;
+        
+        p {
+            margin-bottom: 16px;
+            color: #A6A39A; /* Muted */
         }
-        .back-link {
-            margin-bottom: 30px;
-        }
-        .back-link a {
-            color: #4a9a4a;
-            text-decoration: none;
+        
+        strong {
+            color: #F4F1EA; /* Foreground */
             font-weight: 500;
         }
-        .back-link a:hover {
-            text-decoration: underline;
+        
+        .warning {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(249, 115, 22, 0.05) 100%);
+            border: 1px solid rgba(249, 115, 22, 0.2);
+            border-left: 3px solid #f97316;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 28px 0;
         }
+        
+        .warning strong {
+            color: #f97316;
+        }
+        
+        .important {
+            background: linear-gradient(135deg, rgba(220, 53, 69, 0.1) 0%, rgba(220, 53, 69, 0.05) 100%);
+            border: 1px solid rgba(220, 53, 69, 0.2);
+            border-left: 3px solid #dc3545;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 28px 0;
+        }
+        
+        .important strong {
+            color: #dc3545;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, rgba(89, 130, 98, 0.1) 0%, rgba(89, 130, 98, 0.05) 100%);
+            border: 1px solid rgba(89, 130, 98, 0.2);
+            border-left: 3px solid #598262; /* AccentForest */
+            border-radius: 12px;
+            padding: 20px;
+            margin: 28px 0;
+        }
+        
+        .highlight strong {
+            color: #598262; /* AccentForest */
+        }
+        
+        ul {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin: 10px 0;
+            color: #A6A39A; /* Muted */
+        }
+        
+        li strong {
+            color: #F4F1EA; /* Foreground */
+        }
+        
+        .contact {
+            background: rgba(89, 130, 98, 0.05);
+            border: 1px solid rgba(89, 130, 98, 0.15);
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 40px;
+        }
+        
+        .footer {
+            text-align: center;
+            color: #A6A39A; /* Muted */
+            font-size: 14px;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid #3A3A3D; /* Border */
+        }
+        
+        .footer em {
+            opacity: 0.8;
+        }
+        
+        .back-link {
+            margin-bottom: 24px;
+        }
+        
+        .back-link a {
+            color: #598262; /* AccentForest */
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        
+        .back-link a:hover {
+            color: #9DBB9D; /* AccentMint */
+        }
+        
         .caps {
-            font-weight: bold;
+            font-weight: 600;
             text-transform: uppercase;
+            color: #F4F1EA;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Clean link styling */
+        a {
+            color: #598262; /* AccentForest */
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        a:hover {
+            color: #9DBB9D; /* AccentMint */
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .content-card {
+                padding: 32px 24px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="back-link">
-            <a href="index.html">← Back to ready to train</a>
-        </div>
-        
-        <h1>Terms and Conditions for trainer.</h1>
-        
-        <p><strong>Effective Date:</strong> [INSERT DATE]<br>
-        <strong>App Developer:</strong> ready to train</p>
+        <div class="content-card">
+            <div class="back-link">
+                <a href="index.html">← Back to ready to train</a>
+            </div>
+            
+            <h1>Terms and Conditions for trainer</h1>
+            
+            <div class="subtitle">
+                <strong>Effective Date:</strong> 2025-08-08<br>
+                <strong>App Developer:</strong> ready to train
+            </div>
 
         <h2>1. Acceptance of Terms</h2>
         <p>By downloading, installing, or using trainer. ("the App"), you agree to be bound by these Terms and Conditions ("Terms"). If you do not agree to these Terms, do not use the App.</p>
@@ -256,7 +362,7 @@
         <h2>13. Contact Information</h2>
         <div class="contact">
             <p>For questions about these Terms and Conditions, please contact:</p>
-            <p><strong>Email:</strong> [YOUR EMAIL]<br>
+            <p><strong>Email:</strong> support@readytotrain.com.au<br>
             <strong>Business:</strong> ready to train<br>
             <strong>App:</strong> trainer.</p>
         </div>
@@ -265,8 +371,9 @@
             <strong>By using trainer., you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.</strong>
         </div>
 
-        <div class="footer">
-            <p><em>Last updated: [INSERT DATE]</em></p>
+            <div class="footer">
+                <em>Last updated: 2025-08-08</em>
+            </div>
         </div>
     </div>
 </body>
